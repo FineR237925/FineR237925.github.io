@@ -34,13 +34,14 @@
 }
 
 /* Адаптив под Iphone 12 Pro*/
-@media screen and (max-width: 393px){
+@media screen and (max-width: 390px){
     .gallery {
         flex-direction: column;
         align-items: center;
         margin-bottom: 32px;
     }
 }
+
 
 
 
