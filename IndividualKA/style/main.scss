@@ -1,0 +1,558 @@
+@function calculate-rem($px) {
+    @return ($px / 16) * 1rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url("font/inter/InterVariable.ttf");
+}
+
+@font-face {
+    font-family: Lalezar;
+    src: url("font/lalezar/Lalezar-Regular.ttf");
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("font/roboto/RobotoVariable.ttf")
+}
+
+@font-face {
+    font-family: Poppins-Medium;
+    src: url("font/poppins/Poppins-Medium.ttf");
+}
+
+@mixin def-img {
+    width: auto;
+    object-fit: fill;
+}
+
+@mixin font ($font, $size, $weight, $color) {
+    font-family: $font;
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin button_red {
+    @include font(Inter, 16px, 600, #ffffff);
+    width: calculate-rem(180);
+    height: calculate-rem(49);
+    box-sizing: border-box;
+
+    background: linear-gradient(122.17deg, #D31027 18.07%, #EA384D 97.79%);
+    border: 2px solid rgba(0, 0, 0, 0.21);
+    box-shadow: 0px 3px 5px #460008;
+    border-radius: 100px;
+}
+
+@mixin button-blue {
+    box-sizing: border-box;
+    width: 200px;
+    height: 51px;
+
+    background: #6789F7;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.18);
+    border-radius: 100px;
+}
+
+
+.main {
+    width: 1440px;
+
+    .container {
+        background-color: #060215;
+
+        .header {
+            display: flex;
+            width: auto;
+            padding: calculate-rem(34) calculate-rem(117) calculate-rem(16) calculate-rem(89);
+            background-color: #013245FF;
+
+            .h-svg {
+                width: calculate-rem(12);
+            }
+
+            .ps-logo {
+                padding-right: calculate-rem(79);
+            }
+
+            .buttons {
+                @include font(Inter, 16px, normal, #ffffff);
+                display: flex;
+                align-items: center;
+            }
+
+            .p-but {
+                width: auto;
+                padding-right: calculate-rem(39);
+                height: calculate-rem(19);
+            }
+            .p-but--last {
+                padding-right: calculate-rem(130);
+            }
+
+            .h-svg-g {
+                width: calculate-rem(26);
+                padding-right: calculate-rem(39);
+            }
+
+            .h-svg-g--last {
+                padding-right: 0;
+                margin-right: calculate-rem(66);
+            }
+
+            .h-but {
+                @include button_red;
+                }
+            }
+
+        .description_div {
+            position: relative;
+            width: 100%;
+            height: calculate-rem(843);
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: fill;
+                display: block;
+            }
+
+            .desc_img-hog {
+                object-fit: fill;
+                width: calculate-rem(499);
+                height: calculate-rem(180);
+            }
+
+            .desc_img-leg {
+                position: absolute;
+                width: calculate-rem(195);
+                height: calculate-rem(68);
+
+                top: 375px;
+                right: 220px;
+            }
+
+            .desc {
+                position: absolute;
+                width: calculate-rem(650);
+                height: calculate-rem(180);
+
+                top: 0px;
+                padding: calculate-rem(226) 0 calculate-rem(400) calculate-rem(133);
+            }
+
+            .d-p {
+                @include font(Inter, 24px, 400, #ffffff);
+                padding-top: calculate-rem(40);
+            }
+
+            .d-but {
+                @include button_red;
+                margin-top: calculate-rem(40);
+            }
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: space-between;
+            height: calculate-rem(621);
+
+            .ditem {
+                width: calculate-rem(300);
+                height: calculate-rem(450);
+                margin-top: calculate-rem(93);
+            }
+
+            .ditem-l {
+                width: calculate-rem(205);
+                height: calculate-rem(450);
+                margin-top: calculate-rem(93);
+            }
+
+            .ditem-c {
+                width: calculate-rem(380);
+                height: calculate-rem(543);
+                margin-top: calculate-rem(40);
+            }
+
+            .item {
+                position: absolute;
+            }
+
+            .item-l {
+                position: absolute;
+            }
+
+            .subitem {
+                position: relative;
+                top: calculate-rem(340);
+                left: calculate-rem(50);
+                overflow: hidden;
+            }
+
+            .first {
+                top: calculate-rem(308);
+                left: calculate-rem(5);
+            }
+
+            .second {
+                top: calculate-rem(350);
+                left: calculate-rem(76);
+            }
+
+            .third {
+                top: calculate-rem(425);
+                left: calculate-rem(90);
+            }
+
+            .fifth {
+                top: calculate-rem(365);
+                left: calculate-rem(75);
+            }
+        }
+
+        .ps-ad {
+            background: linear-gradient(98.99deg, #E5019F -7.13%, #6772D1 54.59%, #7774FF 99.49%);
+            display: flex;
+
+            .ad-div {
+                padding-left: calculate-rem(130);
+            }
+
+            .ad-h {
+                @include font(Lalezar, 115.79px, normal, rgba(255, 255, 255, 0.72));
+
+                -webkit-text-stroke-color: #ffffff;
+                -webkit-text-stroke-width: 2px;
+                width: calculate-rem(638);
+                height: calculate-rem(200);
+                line-height: 99.6px;
+                margin-top: calculate-rem(150);
+            }
+
+            .ad-d {
+                @include font(Inter, 24px, 400, rgba(255, 255, 255, 0.87));
+                width: calculate-rem(546);
+                margin-top: calculate-rem(12);
+                margin-bottom: calculate-rem(47);
+            }
+
+            .ad-but {
+                @include button_blue;
+                @include font(Inter, 18px, 400, #ffffff);
+            }
+
+            .ad-img {
+                margin-left: calculate-rem(148);
+            }
+        }
+
+        .sale {
+            height: calculate-rem(820);
+            background-image: url("../img/sale.png");
+
+            .sale-text {
+                padding-left: calculate-rem(130);
+                padding-top: calculate-rem(64);
+
+                .sale-h1 {
+                    @include font(Inter, 41.34px, 400, rgba(255, 255, 255, 0.8));
+                }
+
+                .sale-h2 {
+                    @include font(Inter, 66.25px, 800, rgba(255, 255, 255, 0.8));
+                }
+
+                .sale-d {
+                    @include font(Inter, 25.52px, 400, #ffffff);
+                    margin-top: calculate-rem(16.25);
+                    max-width: calculate-rem(635.35);
+                }
+
+                .sale-but {
+                    @include button_red;
+                    margin-top: calculate-rem(30.25);
+                    margin-bottom: calculate-rem(386);
+                }
+            }
+
+            .three {
+                margin: 0 auto;
+                width: calculate-rem(1180);
+                display: flex;
+                justify-content: space-between;
+                @include font(Inter, 20px, 400, #ffffff);
+
+                .fisethi {
+                    width: calculate-rem(388);
+                    height: calculate-rem(246);
+                    display: flex;
+                    flex-direction: column;
+                    object-fit: cover;
+
+                    box-shadow: 0px 15px 15px #000000;
+                }
+
+                .three-d {
+                    align-self: center;
+                    margin-top: calculate-rem(17);
+                    width: calculate-rem(236);
+                    text-align: center;
+                }
+            }
+        }
+
+        .trash {
+            height: calculate-rem(310);
+            background-color: #060215;
+        }
+    }
+}
+
+.footer {
+    width: 1440px;
+    height: 497px;
+    background: #080122;
+
+    .zmail {
+        background: linear-gradient(122.17deg, #D31027 18.07%, #EA384D 97.79%);
+    }
+    .mail {
+        width: calculate-rem(1230);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        height: calculate-rem(141);
+
+        .fig-mail {
+            width: calculate-rem(284);
+            height: calculate-rem(30);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include font(Roboto, 24px, 400, #ffffff);
+        }
+
+        .mail-form {
+            background: #FFFCFC;
+            border-radius: 8px;
+            width: calculate-rem(592);
+            height: calculate-rem(49);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .mf1 {
+                border: none;
+                width: calculate-rem(108);
+                margin-left: calculate-rem(20);
+                @include font(Roboto, 15px, 400, #CDCDCD);
+                background: none;
+            }
+
+            .mf2 {
+                width: calculate-rem(113.66);
+                height: calculate-rem(36);
+                border: none;
+                background: linear-gradient(122.17deg, #D31027 18.07%, #EA384D 97.79%);
+                border-radius: 5px;
+                margin-right: calculate-rem(4.9);
+                @include font(Poppins-Medium, 15px, 400, #ffffff);
+            }
+        }
+    }
+
+    .f-desc {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding-top: calculate-rem(66);
+        width: calculate-rem(1200);
+        @include font(Roboto-Regular, 12px, 400, #ffffff);
+
+        .f-h {
+            @include font(Roboto, 20px, 400, #ffffff);
+        }
+
+        .f-desc1, .f-desc2, .f-desc3, .f-desc4{
+            height: calculate-rem(138);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .f-desc5 {
+            height: calculate-rem(105);
+        }
+
+        .f-5d {
+            margin-top: calculate-rem(9);
+        }
+
+        .f-svg {
+            margin-top: calculate-rem(29);
+            margin-right: calculate-rem(14);
+        }
+    }
+}
+
+/******************************************/
+/******************************************/
+
+@media screen and (max-width: 394px) {
+    * {
+        max-width: 100%;
+    }
+
+    .main {
+        .container {
+            .header {
+                flex-direction: column;
+                .buttons {
+                    flex-direction: column;
+                    gap: 8px;
+                    .p-but--last {padding-right: 0}
+                }
+            }
+
+            .description_div {
+                height: 550px;
+
+                img {
+                    height: 550px;
+                }
+
+                .desc {
+                    padding: 0;
+                    margin: 96px auto;
+                }
+                .desc_img-leg {top: 120px; right: 0}
+                .d-but {margin-left: 96px}
+            }
+
+            .gallery {
+                height: 2500px;
+                flex-direction: column;
+                justify-content: space-around;
+
+                .ditem-l {
+                    width: 300px;
+                    height: 450px;
+                    margin-top: 0;
+                }
+
+                .ditem-c {
+                    width: 300px;
+                    height: 450px;
+                    margin-top: 0;
+                    margin-bottom: 108px;
+                }
+
+                .ditem {
+                    width: 300px;
+                    height: 450px;
+                    margin-top: 0;
+                }
+            }
+
+            .ps-ad {
+                height: 1200px;
+                flex-direction: column;
+
+                .ad-div {
+                    padding-left: 0;
+                    .ad-h {
+                        margin-top: 96px;
+                        @include font(Lalezar, 64px, normal, rgba(255, 255, 255, 0.72));
+                    }
+
+                    .ad-d {
+
+                    }
+
+                    .ad-but {
+                        margin-left: 90px;
+                        margin-bottom: 24px;
+                    }
+                }
+
+                .ad-img {
+                    margin-left: -24px;
+                    height: 600px;
+                    width: 100%;
+                }
+            }
+
+            .sale {
+                height: 1300px;
+
+                .sale-text {
+                    padding: 0 0;
+
+                    .sale-h2 {
+                        @include font(Inter, 54px, 800, rgba(255, 255, 255, 0.8));
+                    }
+
+                    .sale-but {
+                        margin-left: 90px;
+                        margin-bottom: 24px;
+                    }
+                }
+
+                .three {
+                    flex-direction: column;
+
+                    .fisethi {
+                        margin-bottom: 54px;
+                    }
+                }
+            }
+
+            .trash {
+                display: none;
+            }
+        }
+    }
+
+    .footer {
+        height: 1100px;
+
+        .zmail {
+            .mail {
+                flex-direction: column;
+
+                .fig-mail {margin-top: 16px;}
+                .mail-form {margin-bottom: 16px;}
+            }
+        }
+
+        .f-desc {
+            height: 800px;
+            flex-direction: column;
+            .f-h {}
+            .f-desc1, .f-desc2, .f-desc3, .f-desc4 {
+                align-items: center;
+            }
+            .f-desc5 {
+                margin: 0 auto;
+            }
+
+            .f-svg {width: 32px;}
+        }
+    }
+}
